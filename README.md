@@ -15,7 +15,7 @@ In this repository, you will find the following files:
 Description of the Random Forest classification process in Google Earth Engine.
 
 ### Segmentation using the SamGEO algorithm in Google Colab
-
+```python
 ## Install the packages to use in code
 # Import the libraries
 import os
@@ -54,7 +54,7 @@ sam.generate(image, mask, batch=True, foreground=False, erosion_kernel=(3, 3))
 # Set the path to save the segmented shapefile and convert the image mask to a shapefile format
 shapefile = "/content/drive/MyDrive/{your_path_to_segmented_shapefile.shp}"
 sam.tiff_to_vector(mask, shapefile)
-
+```
 ### Analysis of Time Series Extracted in Google Earth Engine
 
 Details about the analysis of time series data extracted in Google Earth Engine.
