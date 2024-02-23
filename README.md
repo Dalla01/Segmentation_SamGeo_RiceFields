@@ -194,6 +194,163 @@ Map.addLayer(classified.clip(roi), {min: 0, max: 1, palette: palette}, 'Land Use
 //   //maxPixels: 1e9,
 //   fileFormat: 'GeoTIFF'});
 ```
+### Creating an additional file to request RFE and FSCORE functions
+```javascript
+//Biblioteca de funções
+// RFE function:
+function RFE_analysis (composite, sampleCollection, scale, tileScale){  
+  // Get band names
+  var bandNames = ee.Image(composite).bandNames();
+  //print('bandNames', bandNames)
+  
+  // Initialize an empty List for storing accuracy
+  var trainAccuracies = ee.List([]);
+  var valAccuracies = ee.List([]);
+  // Initialize an empty List for storing variable importance
+  var variableImportance = ee.List([]);
+  
+  var sampling = composite.select(bandNames).sampleRegions({
+      collection: sampleCollection,
+      properties: ['LULC'],
+      scale: scale,
+      tileScale: tileScale,
+  });
+  sampling = sampling.randomColumn({'seed':1});
+  var training = sampling.filter('random <= 0.7');
+  var validation = sampling.filter('random > 0.7');
+
+  //define o classificador:
+  var classifier = ee.Classifier.smileRandomForest({'numberOfTrees':50, 'seed':1});
+  
+  // Define a function for iterative classification
+  function iterativeClassification(currentBandNames) {
+    
+    // Train classifier
+    var trained = classifier.train({
+    features: training,
+    classProperty: 'LULC',
+    inputProperties: currentBandNames
+    });
+  
+    // Compute accuracy on training set
+    var trainAccuracy = trained.confusionMatrix().accuracy();
+  
+    // Compute accuracy on validation set
+    var validated = validation.classify(trained);
+    var valAccuracy = validated.errorMatrix('LULC', 'classification').accuracy();
+  
+    // Store accuracies
+    trainAccuracies = trainAccuracies.add(trainAccuracy);
+    valAccuracies = valAccuracies.add(valAccuracy);
+  
+    // Get variable importance
+    var dict = trained.explain();
+    var variable_importance = ee.Dictionary(dict.get('importance'));
+  
+    // Store variable importance
+    variableImportance = variableImportance.add(variable_importance);
+  
+    // Convert dictionary to separate lists of keys and values
+    var keysList = variable_importance.keys();
+    var valuesList = variable_importance.values();
+    //print(keysList)
+    
+    
+    
+    // Find index of minimum value
+    var minIndex = valuesList.indexOf(valuesList.reduce(ee.Reducer.min()));
+    //print('minIndex', minIndex)
+    
+    var orderMin = valuesList.sort()
+    //print('orderMin', orderMin)
+    
+    
+    // Get key corresponding to minimum value (least important band)
+    var leastImportantBand = keysList.get(minIndex);
+    //print('leastImportantBand', leastImportantBand)
+    
+    // Remove least important band from band list
+    currentBandNames = ee.List(currentBandNames).remove(leastImportantBand);
+
+    return currentBandNames;
+    
+  }
+
+  //Método limitando o número de iter
+  var iteration = 1;
+  while (bandNames.length().getInfo() > 1 && iteration < 25) {
+      bandNames = ee.List(iterativeClassification(bandNames));
+      iteration = iteration + 1;
+  }
+ 
+ // Convert list to a FeatureCollection
+  var trainAccuraciesFC = ee.FeatureCollection(trainAccuracies.map(function(item){
+    return ee.Feature(null, {'value': item}); // Assuming each item in the list is a value
+  }));
+  
+  // Export the FeatureCollection to Google Drive as CSV
+  Export.table.toDrive({
+    collection: trainAccuraciesFC,
+    description: 'trainAccuraciesFC',
+    fileFormat: 'CSV'
+  });
+ 
+   var valAccuraciesFC = ee.FeatureCollection(valAccuracies.map(function(item){
+    return ee.Feature(null, {'value': item}); // Assuming each item in the list is a value
+  }));
+  
+  // Export the FeatureCollection to Google Drive as CSV
+  Export.table.toDrive({
+    collection: valAccuraciesFC,
+    description: 'valAccuraciesFC',
+    fileFormat: 'CSV'
+  });
+ 
+ // Print the accuracy list and variable importance list
+  // print('Training Accuracies RFE:', trainAccuracies);
+  // print('Validation Accuracies RFE:', valAccuracies);
+  // print('Variable Importance RFE:', variableImportance);
+  
+  
+  
+}
+
+// Fscore function:  
+function FScore_analysis (ImportanceFeat){
+  var FeatImpDict = (ee.Feature(ImportanceFeat).toDictionary())
+  
+  var Valores =ee.List(FeatImpDict.values())
+  var Chaves = ee.List(FeatImpDict.keys())
+  
+  var getPercentage = function(lista) {
+    // Calcula o valor total das importancias
+    var total = ee.Number(lista.reduce(ee.Reducer.sum()));
+    
+    // Função para calcular o percentual
+    var calculatePercentage = function(element) {
+      return ee.Number(element).divide(total).multiply(100);
+    };
+    
+    // Usando a função .map() para calcular o percentual e atribuir os resultados a lista
+    var percentList = ee.List(lista).map(calculatePercentage);
+    
+    return percentList;
+  };
+  
+  var listaPercentual = getPercentage(Valores)
+  
+  var Redict =ee.Dictionary.fromLists(Chaves, listaPercentual)
+  print('Feature Score (%):', Redict)
+}  
+
+
+// --------------------------------------------------------------------------------------------
+//               Exporta funçoes para uso em outros scripts
+// --------------------------------------------------------------------------------------------
+exports.RFE_analysis=RFE_analysis;
+exports.FScore_analysis=FScore_analysis;
+
+```
 
 ### Segmentation using the SamGEO algorithm in Google Colab
 ```python
