@@ -27,5 +27,5 @@ The results of no-prompt raw segmentation also can be downloade in [Images and S
 
 ### Analysis of Time Series Extracted in Google Earth Engine
 
-Details about the analysis of time series data extracted in Google Earth Engine.
+To analyse and compare the impact of the use of a large area plot and a detailed segmented plot we performed a time series extraction in [Time Series extraction](https://code.earthengine.google.com/48bebc7a1e0254a66ea848a2d9ef127c) in Google Earth Engine platform, you can also access the []() in this repository.
 
