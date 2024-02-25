@@ -7,8 +7,8 @@ In this repository, you will find the following subjects:
 ### Topics
 
 1. [Random Forest Classification in Google Earth Engine - GEE](#random-forest-classification-in-google-earth-engine---gee)
-2. [Segmentation using the SamGEO algorithm in Google Colab](#segmentation-with-samgeo)
-3. [Analysis of Time Series Extracted in Google Earth Engine](#time-series-analysis)
+2. [Segmentation using the SamGEO algorithm in Google Colab](#segmentation-using-the-samgeo-algorithm-in-google-colab)
+3. [Analysis of Time Series Extracted in Google Earth Engine](#analysis-of-time-series-extracted-in-google-earth-engine)
 
 ### Random Forest Classification in Google Earth Engine - GEE
 
