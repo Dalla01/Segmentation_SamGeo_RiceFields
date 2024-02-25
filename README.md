@@ -14,7 +14,7 @@ In this repository, you will find the following subjects:
 
 By using the code [Irrigated Rice Areas Classification](RiceAreasClassification.js) and downloading the [Shapefile archives](Shapefiles) you can perform a Random Forest classification for irrigated rice areas in Turvo city. Also, you can use the follow link [Irrigated Rice Areas GEE - Link](https://code.earthengine.google.com/2ce75e8e35d500b803a56bdedd2f83b5) to perform the classification, all necessaries files are included in the previous link.
 
-To perform the RFE and FSCORE analysis you need to access the follow link [RFE and FSCORE toolbox](https://code.earthengine.google.com/56e7af7a64fbdc0a364cee7b3ec3faa2) or go to the code []() in this shared in this repository
+To perform the RFE and FSCORE analysis you need to access the follow link [RFE and FSCORE toolbox GEE - Link](https://code.earthengine.google.com/56e7af7a64fbdc0a364cee7b3ec3faa2) or go to the code [RFE and FSCORE toolbox](RFE_FSCORE_toolbox.js) in this shared in this repository.
 
 ### Creating an additional file to request RFE and FSCORE functions
 ```javascript
