@@ -12,7 +12,7 @@ In this repository, you will find the following subjects:
 
 ### Random Forest Classification in Google Earth Engine - GEE
 
-By using the code [Irrigated Rice Areas Classification](RiceAreasClassification.js)
+By using the code [Irrigated Rice Areas Classification](RiceAreasClassification.js) 
 
 ### Creating an additional file to request RFE and FSCORE functions
 ```javascript
