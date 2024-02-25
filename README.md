@@ -31,4 +31,3 @@ To analyze and compare the impact of the use of a large area plot and a detailed
 After extracting the time series, download them and save in a folder, you can analyze each plot time series by performing the [Time Series chart generaton](TimeSeriesCharts.py) script in Pyhton. Using the general plot shapefile, you will get a unique chart for the entire area; using the detailed plot, you will get a bunch of time series to analyze them individually.
 
 In this study, we focus only on a unique city in Santa Catarina state. You can see all irrigated rice areas in Brazil for different seasons at the [ANA](https://metadados.snirh.gov.br/geonetwork/srv/api/records/1ac9b37f-0745-44f9-a60b-6a2bd366bbe1) website.
-](https://metadados.snirh.gov.br/geonetwork/srv/api/records/1ac9b37f-0745-44f9-a60b-6a2bd366bbe1)
