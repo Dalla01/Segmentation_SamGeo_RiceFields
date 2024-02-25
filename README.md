@@ -12,7 +12,7 @@ In this repository, you will find the following subjects:
 
 ### Random Forest Classification in Google Earth Engine - GEE
 
-By using the code [Irrigated Rice Areas Classification](RiceAreasClassification.js) and downloading the [Shapefile archives](Shapefiles) you can perform a Random Forest classification for irrigated rice areas in Turvo city. 
+By using the code [Irrigated Rice Areas Classification](RiceAreasClassification.js) and downloading the [Shapefile archives](Shapefiles) you can perform a Random Forest classification for irrigated rice areas in Turvo city. Also, you can use the follow link [Irrigated Rice Areas GEE - Link](https://code.earthengine.google.com/2ce75e8e35d500b803a56bdedd2f83b5) to perform the classification, all necessaries files are included in the previous link.
 
 ### Creating an additional file to request RFE and FSCORE functions
 ```javascript
