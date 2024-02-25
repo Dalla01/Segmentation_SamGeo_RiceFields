@@ -20,7 +20,10 @@ With the above codes and archives you able to create an binary map with irrigate
 
 ### Segmentation using the SamGEO algorithm in Google Colab
 
-
+The segmentation approach applied to this study is based on [segment-geospatial](https://github.com/opengeos/segment-geospatial) repository, for a detailed explication about all functions, code development and other issues please visit [SAMGEO page](https://samgeo.gishub.org/).
+In this study we perform a segmentation task over a pansharpned CBERS-4A/WPM image compostion. To download the pre-precessed image go to the [Images and Shapefiles](https://drive.google.com/drive/folders/1tRkOSdJ8wUMZbmBNreSMaNqGLGaC_8BZ?usp=sharing) Google Drive folder. The pre-process include some steps like cut to the image to the Region of Interest (ROI), apply pansharpening algorithm, create a 3 band panshapned image compostion and rescale the image in 0 to 255 range [image composition rescale script](rescale_ImageCompositon.py).
+After process the image we've uploaded the CBERS-4A/WPM image compositon in Google Drive to perform the [SAMgeo script](SAMgeo_script.py) and get a detailed segmentation over the ROI.
+The results of no-prompt raw segmentation also can be downloade in [Images and Shapefiles](https://drive.google.com/drive/folders/1tRkOSdJ8wUMZbmBNreSMaNqGLGaC_8BZ?usp=sharing) Google Drive folder.
 
 ### Analysis of Time Series Extracted in Google Earth Engine
 
