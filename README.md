@@ -1,4 +1,4 @@
-# Classification & Segmentation with SamGeo for Irrigated Rice Fields
+# Classification & Segmentation with SAMgeo for Irrigated Rice Fields
 
 This repository was created to share the algorithms, files, and results of the article titled "Rice Field Segmentation: Influence of detailed features within the plots using Segment Anything Model Geospatial," published in the Journal of Information and Data Management - JIDM.
 
@@ -7,7 +7,7 @@ In this repository, you will find the following subjects:
 ### Topics
 
 1. [Random Forest Classification in Google Earth Engine - GEE](#random-forest-classification-in-google-earth-engine---gee)
-2. [Segmentation using the SamGEO algorithm in Google Colab](#segmentation-using-the-samgeo-algorithm-in-google-colab)
+2. [Segmentation using the SAMgeo algorithm in Google Colab](#segmentation-using-the-samgeo-algorithm-in-google-colab)
 3. [Analysis of Time Series Extracted in Google Earth Engine](#analysis-of-time-series-extracted-in-google-earth-engine)
 
 ### Random Forest Classification in Google Earth Engine - GEE
@@ -18,7 +18,7 @@ To perform the RFE and FSCORE analysis, you need to access the following link [R
 
 With the above codes and archives, you are able to create a binary map with irrigated rice area for the 2021/2022 season.
 
-### Segmentation using the SamGEO algorithm in Google Colab
+### Segmentation using the SAMgeo algorithm in Google Colab
 
 The segmentation approach applied to this study is based on the [segment-geospatial](https://github.com/opengeos/segment-geospatial) repository. For a detailed explanation about all functions, code development, and other issues, please visit the [SAMGEO page](https://samgeo.gishub.org/).
 In this study, we performed a segmentation task over a pansharpened CBERS-4A/WPM image composition. To download the pre-processed image, go to the [Images and Shapefiles](https://drive.google.com/drive/folders/1tRkOSdJ8wUMZbmBNreSMaNqGLGaC_8BZ?usp=sharing) Google Drive folder. The pre-process includes some steps like cutting the image to the Region of Interest (ROI), applying a pansharpening algorithm, creating a 3-band pansharpened image composition, and rescaling the image in the range 0 to 255. [image composition rescale script](rescale_ImageCompositon.py).
