@@ -1,4 +1,4 @@
-[# Classification & Segmentation with SamGeo for Irrigated Rice Fields
+# Classification & Segmentation with SamGeo for Irrigated Rice Fields
 
 This repository was created to share the algorithms, files, and results of the article titled "Rice Field Segmentation: Influence of detailed features within the plots using Segment Anything Model Geospatial," published in the Journal of Information and Data Management - JIDM.
 
