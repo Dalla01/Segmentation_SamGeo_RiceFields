@@ -1,3 +1,10 @@
+/*'''
+# -*- coding: utf-8 -*-
+
+Send email and msg
+@author: Andre
+
+'''*/
 //Setting the file to perform RFE and FSCORE functions
 var ptbx=require('users/adbg50/JIDM_archieves:toolBox');
 
