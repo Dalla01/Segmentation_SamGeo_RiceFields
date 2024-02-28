@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 Send email and msg
-@author: Andre
+@author: Andre Garcia, Victor Prudente, Michel Chaves, Darlan Teles, Ieda Sanches and Kleber Trabaquini
+Adapted from: https://samgeo.gishub.org/examples/satellite/
 """
 
 # Install the packages to use in code
