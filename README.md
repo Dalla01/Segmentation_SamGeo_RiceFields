@@ -41,4 +41,4 @@ In this study, we focus only on a unique city in Santa Catarina state. You can s
 
 ### License
 
-The content of this project itself is licensed under the [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/deed.en), and the underlying source code used to format and display that content is licensed under the [MIT license](LICENSE.md).
+The content of this project itself is licensed under the [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/deed.en), and the underlying source code used to format and display that content is licensed under the [MIT license](LICENSE).
