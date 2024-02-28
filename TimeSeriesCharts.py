@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Send email and msg
-@author: Andre
+@author: Andre Garcia, Victor Prudente, Michel Chaves, Darlan Teles, Ieda Sanches and Kleber Trabaquini
 """
 
 
