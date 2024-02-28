@@ -36,9 +36,6 @@ After extracting the time series, download them and save in a folder, you can an
 
 In this study, we focus only on a unique city in Santa Catarina state. You can see all irrigated rice areas in Brazil for different seasons at the [ANA](https://metadados.snirh.gov.br/geonetwork/srv/api/records/1ac9b37f-0745-44f9-a60b-6a2bd366bbe1) website.
 
-
-<span style="color:red">*I add a Issue to the repo - Please delete this after see that.* text</span>.
-
 ### License
 
 The content of this project itself is licensed under the [Creative Commons Attribution 4.0 International license]( https://creativecommons.org/licenses/by/4.0/), and the underlying source code used to format and display that content is licensed under the [MIT license](LICENSE).
