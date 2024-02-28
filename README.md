@@ -27,6 +27,8 @@ The results of non-prompt raw segmentation can also be downloaded in the [Images
 
 If you want to analyze an other local or date using CBERS-4A/WPM data go to [INPE](http://www.dgi.inpe.br/catalogo/explore) satellite image catalog website.
 
+If you want to copy packages and environment configurations just download and install the [Conda Environmet settings](condaEnvironment.yml)
+
 ### Analysis of Time Series Extracted in Google Earth Engine
 
 To analyze and compare the impact of the use of a large area plot and a detailed segmented plot, we performed a [Time Series extraction](https://code.earthengine.google.com/48bebc7a1e0254a66ea848a2d9ef127c) in the Google Earth Engine platform. You can also access the [code](TimeSeriesExtraction.js) in this repository. If you choose to run the script on the Google Earth platform, the general plot and detailed plot are already shared, but if you want to adapt the code or inspect the plots, you can download them in the [Shapefile archives](Shapefiles) folder.
