@@ -1,3 +1,12 @@
+/*'''
+# -*- coding: utf-8 -*-
+
+Send email and msg
+@author: Andre
+
+'''*/
+
+
 // - Import the SIAC atmospheric correction module (needed to collections before december 2018 in Brazil)
 var siac = require('users/marcyinfeng/utils:SIAC');
 //setting some cloud filter parameters

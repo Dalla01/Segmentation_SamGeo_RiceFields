@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+"""
+Send email and msg
+@author: Andre
+"""
+
 # Install the packages to use in code
 !pip install segment-geospatial leafmap localtileserver
 

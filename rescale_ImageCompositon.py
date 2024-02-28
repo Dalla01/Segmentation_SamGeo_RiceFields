@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Send email and msg
+@author: Andre
+"""
+
+
 #Install packeges
 !pip install rasterio
 
@@ -7,6 +14,7 @@ import numpy as np
 import os
 
 def rescale_image(image):
+
     rescaled_bands = []
 
     # Iterate over each band
@@ -32,8 +40,8 @@ def rescale_image(image):
     return rescaled_image
 
 # Open the GeoTIFF file using rasterio
-
 image_path = 'your/input/image/path.tif'
+
 with rasterio.open(image_path) as src:
     # Read the image data
     image = src.read()

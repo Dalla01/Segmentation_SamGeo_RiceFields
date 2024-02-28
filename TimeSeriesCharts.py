@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Send email and msg
+@author: Andre
+"""
+
+
 #import the libraries
 import pandas as pd
 import numpy as np

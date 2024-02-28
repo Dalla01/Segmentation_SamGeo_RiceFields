@@ -1,3 +1,11 @@
+/*'''
+# -*- coding: utf-8 -*-
+
+Send email and msg
+@author: Andre
+
+'''*/
+
 // RFE function:
 function RFE_analysis (composite, sampleCollection, scale, tileScale){  
   // Get band names
@@ -20,7 +28,7 @@ function RFE_analysis (composite, sampleCollection, scale, tileScale){
   var training = sampling.filter('random <= 0.7');
   var validation = sampling.filter('random > 0.7');
 
-  //define o classificador:
+  //define the classifier:
   var classifier = ee.Classifier.smileRandomForest({'numberOfTrees':50, 'seed':1});
   
   // Define a function for iterative classification
@@ -168,7 +176,7 @@ function FScore_analysis (ImportanceFeat){
 
 
 // --------------------------------------------------------------------------------------------
-//               Exporta funçoes para uso em outros scripts
+//               Export the functions to be used in others scripts
 // --------------------------------------------------------------------------------------------
 exports.RFE_analysis=RFE_analysis;
 exports.FScore_analysis=FScore_analysis;
