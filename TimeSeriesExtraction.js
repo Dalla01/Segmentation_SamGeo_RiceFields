@@ -52,7 +52,7 @@ var collectionS2clouds =  ee.ImageCollection('COPERNICUS/S2_CLOUD_PROBABILITY')
               .filterBounds(geometriaInteresse);
 
 //Getting the Sentinel-2 image collection
-var collectionOriginalS2 = ee.ImageCollection("COPERNICUS/S2_HARMONIZED")
+var collectionOriginalS2 = ee.ImageCollection("COPERNICUS/S2_SR_HARMONIZED")
   .filterBounds(geometriaInteresse)
   .filterDate(dataInicio, dataFinal)
   .filterMetadata('CLOUDY_PIXEL_PERCENTAGE', 'less_than', limiteNuvens);
@@ -67,10 +67,11 @@ var collectionS2WithCloudMask = ee.Join.saveFirst('cloud_mask').apply({
 });
 
 //Apply cloud mask and generating the pre-processed image collection
-var ColS2preProcess = ee.ImageCollection(collectionS2WithCloudMask).map(maskClouds)
+var SrCollectionS2 = ee.ImageCollection(collectionS2WithCloudMask).map(maskClouds)
 
-//Use SIAC to generate Surface Reflectance Image Collection
-var SrCollectionS2 = ColS2preProcess.map(siac.get_sur)
+//Use SIAC to generate Surface Reflectance Image Collection (before deceber 2018 - comment line 70 and uncomment lines 73 & 74)
+//var ColS2preProcess = ee.ImageCollection(collectionS2WithCloudMask).map(maskClouds)
+//var SrCollectionS2 = ColS2preProcess.map(siac.get_sur)
 
 
 //Function to calculate NDVI
