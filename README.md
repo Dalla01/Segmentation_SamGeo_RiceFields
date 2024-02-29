@@ -21,9 +21,9 @@ With the above codes and archives, you are able to create a binary map with irri
 ### Segmentation using the SAMgeo algorithm in Google Colab
 
 The segmentation approach applied to this study is based on the [segment-geospatial](https://github.com/opengeos/segment-geospatial) repository. For a detailed explanation about all functions, code development, and other issues, please visit the [SAMGEO page](https://samgeo.gishub.org/).
-In this study, we performed a segmentation task over a pansharpened CBERS-4A/WPM image composition. To download the pre-processed image, go to the [Images and Shapefiles](https://drive.google.com/drive/folders/1tRkOSdJ8wUMZbmBNreSMaNqGLGaC_8BZ?usp=sharing) Google Drive folder. The pre-process includes some steps like cutting the image to the Region of Interest (ROI), applying a pansharpening algorithm, creating a 3-band pansharpened image composition, and rescaling the image in the range 0 to 255. [Image composition rescale script](rescale_ImageCompositon.py).
+In this study, we performed a segmentation task over a pansharpened CBERS-4A/WPM image composition. To download the pre-processed image, go to the [Images and Shapefiles](https://data.mendeley.com/preview/czfnyg8bkv?a=aace6d0b-1cbc-46e3-939a-00098fbbb23c) Mendeley Data folder. The pre-process includes some steps like cutting the image to the Region of Interest (ROI), applying a pansharpening algorithm, creating a 3-band pansharpened image composition, and rescaling the image in the range 0 to 255. [Image composition rescale script](rescale_ImageCompositon.py).
 After processing the image, we've uploaded the CBERS-4A/WPM image composition to Google Drive to perform the [SAMgeo script](SAMgeo_script.py) and obtain a detailed segmentation over the ROI.
-The results of non-prompt raw segmentation can also be downloaded in the [Images and Shapefiles](https://drive.google.com/drive/folders/1tRkOSdJ8wUMZbmBNreSMaNqGLGaC_8BZ?usp=sharing) Google Drive folder.
+The results of non-prompt raw segmentation can also be downloaded in the [Images and Shapefiles](https://data.mendeley.com/preview/czfnyg8bkv?a=aace6d0b-1cbc-46e3-939a-00098fbbb23c) Mendeley Data folder.
 
 If you want to analyze an other local or date using CBERS-4A/WPM data go to [INPE](http://www.dgi.inpe.br/catalogo/explore) satellite image catalog website.
 
