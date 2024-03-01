@@ -3,6 +3,7 @@
 
 Send email and msg
 @author: Andre Garcia, Victor Prudente, Michel Chaves, Darlan Teles, Ieda Sanches and Kleber Trabaquini
+code adapedt from: https://ai.plainenglish.io/performing-feature-selection-in-google-earth-engine-gee-using-recursive-feature-elimination-rfe-0f5ba2789c4c
 
 '''*/
 
